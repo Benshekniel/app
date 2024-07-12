@@ -9,13 +9,20 @@ const StyledNavLink = styled(NavLink)`
   color: inherit;
   text-decoration: none;
   margin: 0 10px;
+  &.active {
+    font-weight: bold;
+  }
+`;
+
+const StyledAppBar = styled(AppBar)`
+  background-color: ${({ theme }) => (theme === 'dark' ? '#333' : '#3f51b5')};
 `;
 
 const NavBar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <AppBar position="static">
+    <StyledAppBar position="static" theme={theme}>
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
@@ -28,7 +35,7 @@ const NavBar = () => {
         <StyledNavLink to="/contact-us">Contact Us</StyledNavLink>
         <Switch checked={theme === 'dark'} onChange={toggleTheme} />
       </Toolbar>
-    </AppBar>
+    </StyledAppBar>
   );
 };
 

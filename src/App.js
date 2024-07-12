@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
-import About from './components/About';
-import ContactUs from './components/ContactUs';
+import Home from './pages/Home';
+import About from './pages/About';
+import ContactUs from './pages/ContactUs';
+import './App.css'; // Import the global CSS file
 
 const App = () => {
   return (
